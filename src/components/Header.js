@@ -22,11 +22,7 @@ export default function Header(props) {
             >
               About me
             </Nav.Link>
-            <Nav.Link
-              id='portfolio'
-              href='#portfolio'
-              onClick={handleMenuSelection}
-            >
+            <Nav.Link href='#portfolio' onClick={handleMenuSelection}>
               Portfolio
             </Nav.Link>
             <Nav.Link id='contact' href='#contact'>
