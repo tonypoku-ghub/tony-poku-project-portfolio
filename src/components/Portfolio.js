@@ -2,6 +2,7 @@ import Main from "./Main";
 import Footer from "./Footer";
 import Header from "./Header";
 import React, { useState } from "react";
+import Jumbo from "./Jumbo";
 
 export default function Portfolio() {
   const [mainId, setMainId] = useState("aboutMe");
@@ -14,6 +15,7 @@ export default function Portfolio() {
   return (
     <React.Fragment>
       <Header setActivePage={setActivePage} />
+      <Jumbo />
       <Main mainId={mainId} />
       <Footer />
     </React.Fragment>

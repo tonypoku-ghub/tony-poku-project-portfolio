@@ -1,6 +1,27 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import styled from "styled-components";
+
+const Styles = styled.div`
+  .navbar {
+    background-color: black;
+    padding: 0 1rem;
+  }
+
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: #bbb;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .ml-auto {
+    margin-left: auto;
+  }
+`;
 
 export default function Header(props) {
   const handleMenuSelection = (e) => {
@@ -9,12 +30,12 @@ export default function Header(props) {
   };
 
   return (
-    <Navbar bg='light' expand='lg'>
-      <Container>
+    <Styles>
+      <Navbar expand='lg'>
         <Navbar.Brand href='#home'>Anthony Poku</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='me-auto'>
+          <Nav className='ml-auto'>
             <Nav.Link
               href='#aboutme'
               id='aboutme'
@@ -22,10 +43,18 @@ export default function Header(props) {
             >
               About me
             </Nav.Link>
-            <Nav.Link href='#portfolio' onClick={handleMenuSelection}>
+            <Nav.Link
+              href='#portfolio'
+              id='portfolio'
+              onClick={handleMenuSelection}
+            >
               Portfolio
             </Nav.Link>
-            <Nav.Link id='contact' href='#contact'>
+            <Nav.Link
+              href='#contact'
+              id='contact'
+              onClick={handleMenuSelection}
+            >
               Contact
             </Nav.Link>
             <Nav.Link id='resume' href='#resume' onClick={handleMenuSelection}>
@@ -33,7 +62,7 @@ export default function Header(props) {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      </Navbar>
+    </Styles>
   );
 }
