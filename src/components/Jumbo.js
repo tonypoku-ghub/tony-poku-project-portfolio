@@ -8,7 +8,7 @@ const Styles = styled.div`
     background-size: cover;
     color: #ccc;
     height: 100px;
-    position: relative;
+    position: static;
     z-index: -2;
   }
 

@@ -5,7 +5,9 @@ import styled from "styled-components";
 const Styles = styled.div`
   .container {
     max-width: 100vw;
-    padding: 0 1rem;
+    max-height: 100vh;
+    background-color: white;
+    padding: 0;
   }
 `;
 function Layout(props) {
