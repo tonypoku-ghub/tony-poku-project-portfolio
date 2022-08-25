@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -26,6 +27,44 @@ const Styles = styled.div`
 `;
 
 function Contact(_props) {
+  const [formValues, setFormValues] = useState({
+    name: "-",
+    email: "-",
+    message: "-",
+  });
+
+  const [formErrors, setFormErrors] = useState({});
+
+  const handleBlurEvent = (e) => {
+    const { name, value } = e.target;
+    console.log("{ name, value } ", { name, value });
+
+    setFormValues({ ...formValues, [name]: value });
+    console.log("formValues: ", formValues);
+
+    const val = validate([name], value);
+
+    console.log("Errors", val);
+
+    setFormErrors(val);
+  };
+
+  const validate = (name, value) => {
+    let error;
+
+    console.log("name", name);
+    console.log("[name]", [name]);
+    console.log("value", value);
+
+    if (!value) {
+      error = `${name} is required`;
+    }
+
+    console.log("error", error);
+
+    return { ...formErrors, [name]: error };
+  };
+
   return (
     <Styles>
       <Container className='shadow-lg'>
@@ -42,6 +81,7 @@ function Contact(_props) {
                 className='form-control'
                 id='name'
                 placeholder='Name'
+                onBlur={handleBlurEvent}
               />
             </div>
             <div className='form-group'>
@@ -53,6 +93,7 @@ function Contact(_props) {
                 id='email'
                 aria-describedby='emailHelp'
                 placeholder='Enter email'
+                onBlur={handleBlurEvent}
               />
             </div>
             <div className='form-group'>
@@ -64,6 +105,7 @@ function Contact(_props) {
                 className='form-control'
                 id='message'
                 placeholder='Message'
+                onBlur={handleBlurEvent}
               />
               <small id='messageHelp' className='form-text text-muted'>
                 Message is required.
