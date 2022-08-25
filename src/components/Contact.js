@@ -8,7 +8,7 @@ const Styles = styled.div`
     // justify-content: space-between;
     width: 50vw;
     // border: 1pt red solid;
-    min-height: 50vh;
+    min-height: 80vh;
     max-height: 100vh;
     margin: 2rem auto;
   }
