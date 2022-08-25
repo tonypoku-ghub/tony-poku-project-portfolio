@@ -1,10 +1,9 @@
 import React from "react";
-
-import Portfolio from "./components/Portfolio";
+import WebPage from "./components/WebPage";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  return <Portfolio />;
+  return <WebPage />;
 }
 
 export default App;
