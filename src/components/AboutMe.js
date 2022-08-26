@@ -7,10 +7,10 @@ const Styles = styled.div`
   .container {
     display: flex;
     // justify-content: space-between;
-    width: 50vw;
+    max-width: 520px;
     // border: 1pt red solid;
-    min-height: 35vh;
-    max-height: 35vh;
+    min-height: 50vh !important;
+    max-height: 60vh;
     margin: 2rem auto;
   }
 
@@ -25,6 +25,18 @@ const Styles = styled.div`
   section {
     padding: 3rem;
     margin: 1rem;
+  }
+
+  .shadow-lg {
+    min-height: 35vh !important;
+  }
+
+  img {
+    width: 20vw;
+  }
+
+  p {
+    font-size: 1.5vw;
   }
 `;
 

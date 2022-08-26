@@ -6,7 +6,11 @@ const Styles = styled.div`
     flex-direction: column;
     justify-content: end;
     align-items: center;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
     //border: 1pt red solid;
+    min-height: auto !important;
   }
 
   .badge {
