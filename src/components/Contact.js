@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -28,42 +28,86 @@ const Styles = styled.div`
 
 function Contact(_props) {
   const [formValues, setFormValues] = useState({
-    name: "-",
-    email: "-",
-    message: "-",
+    username: "",
+    email: "",
+    message: "",
   });
 
   const [formErrors, setFormErrors] = useState({});
 
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+
   const handleBlurEvent = (e) => {
+    e.preventDefault();
     const { name, value } = e.target;
+    console.log("e.target ", e.target);
     console.log("{ name, value } ", { name, value });
 
     setFormValues({ ...formValues, [name]: value });
     console.log("formValues: ", formValues);
 
-    const val = validate([name], value);
-
-    console.log("Errors", val);
-
-    setFormErrors(val);
+    if (isValidForm(name, value)) {
+    }
   };
 
-  const validate = (name, value) => {
+  const isValidForm = (name, value) => {
     let error;
 
     console.log("name", name);
-    console.log("[name]", [name]);
     console.log("value", value);
+    console.log("missingData? ", !value);
 
     if (!value) {
       error = `${name} is required`;
+      console.log("error - ", error);
+      setFormErrors({ ...formErrors, [name]: error });
+    } else {
+      delete formErrors[name];
     }
 
-    console.log("error", error);
+    console.log(
+      "isEmail = " +
+        /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(value)
+    );
 
-    return { ...formErrors, [name]: error };
+    if (
+      name === "email" &&
+      !formErrors?.email &&
+      !/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(value)
+    ) {
+      error = `Invalid ${name} format`;
+      console.log("error - ", error);
+      setFormErrors({ ...formErrors, [name]: error });
+    } else {
+      delete formErrors[name];
+    }
+
+    console.log("formErrors", formErrors);
+
+    return Object.keys(formErrors).length === 0;
   };
+
+  useEffect(() => {
+    console.log("useEffect called");
+    if (
+      Object.keys(formErrors).length === 0 &&
+      !Object.values(formValues).some((item) => !item)
+    ) {
+      setButtonDisabled(false);
+      console.log(
+        "form button enabled",
+        " formErrors.length === " + Object.keys(formErrors).length,
+        " Object.values(formValues) === " + Object.values(formValues)
+      );
+    } else {
+      setButtonDisabled(true);
+      console.log(
+        "form button disabled",
+        " formErrors.length === " + Object.keys(formErrors).length,
+        " Object.values(formValues) === " + Object.values(formValues)
+      );
+    }
+  }, [formErrors, formValues]);
 
   return (
     <Styles>
@@ -72,17 +116,21 @@ function Contact(_props) {
           <header>
             <h3>Contact</h3>
           </header>
+          {/* <pre>{JSON.stringify(formValues, undefined, 2)}</pre> */}
           <Form>
             <div className='form-group'>
-              <Form.Label htmlFor='name'>Name</Form.Label>
+              <Form.Label htmlFor='username'>Name</Form.Label>
               <Form.Control
                 type='text'
-                name='name'
+                name='username'
                 className='form-control'
-                id='name'
-                placeholder='Name'
+                id='username'
+                placeholder='name'
                 onBlur={handleBlurEvent}
               />
+              <small id='messageHelp' className='form-text text-muted'>
+                {formErrors.username}
+              </small>
             </div>
             <div className='form-group'>
               <Form.Label htmlFor='email'>Email address</Form.Label>
@@ -95,6 +143,9 @@ function Contact(_props) {
                 placeholder='Enter email'
                 onBlur={handleBlurEvent}
               />
+              <small id='messageHelp' className='form-text text-muted'>
+                {formErrors.email}
+              </small>
             </div>
             <div className='form-group'>
               <Form.Label htmlFor='message'>Message</Form.Label>
@@ -108,12 +159,18 @@ function Contact(_props) {
                 onBlur={handleBlurEvent}
               />
               <small id='messageHelp' className='form-text text-muted'>
-                Message is required.
+                {formErrors.message}
               </small>
             </div>
-            <button type='submit' className='btn btn-primary float-right'>
+            <Button
+              variant='dark'
+              href='#'
+              id='formButton'
+              type='submit'
+              disabled={buttonDisabled}
+            >
               Submit
-            </button>
+            </Button>
           </Form>
         </section>
       </Container>
