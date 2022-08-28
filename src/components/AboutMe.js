@@ -6,8 +6,8 @@ import avatarImage from "../Assets/images/about_me_avatar.jpg";
 const Styles = styled.div`
   .container {
     display: flex;
-    // justify-content: space-between;
-    max-width: 520px;
+    max-width: 80vw;
+    width: 60vw;
     // border: 1pt red solid;
     min-height: 50vh !important;
     max-height: 60vh;
@@ -27,9 +27,9 @@ const Styles = styled.div`
     margin: 1rem;
   }
 
-  .shadow-lg {
-    min-height: 35vh !important;
-  }
+  // .shadow-lg {
+  //   min-height: 35vh !important;
+  // }
 
   img {
     width: 20vw;
@@ -42,7 +42,7 @@ const Styles = styled.div`
 
 function AboutMe() {
   return (
-    <Styles>
+    <Styles name='AboutMe' id='AboutMe'>
       <Container className='shadow-lg'>
         <section>
           <header>

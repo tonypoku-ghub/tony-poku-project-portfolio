@@ -4,10 +4,10 @@ import Navbar from "react-bootstrap/Navbar";
 import styled from "styled-components";
 
 const Styles = styled.div`
-  .container {
+  .navbar {
     max-width: 100vw;
     max-height: 100vh;
-    margin: 0;
+    padding-left: 0.5rem;
   }
 
   .navbar {
@@ -44,7 +44,7 @@ export default function Header(props) {
   };
 
   return (
-    <Styles>
+    <Styles name='Header' id='Header'>
       <Navbar expand='lg'>
         <Navbar.Brand href='/'>Anthony Poku</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />

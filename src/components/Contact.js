@@ -5,12 +5,17 @@ import styled from "styled-components";
 const Styles = styled.div`
   .container {
     display: flex;
-    // justify-content: space-between;
+    max-width: 80vw;
     width: 50vw;
     // border: 1pt red solid;
-    min-height: 80vh;
-    max-height: 100vh;
+    min-height: auto;
+    max-height: 70vh;
     margin: 2rem auto;
+  }
+
+  section {
+    padding: 3rem;
+    margin: 1rem;
   }
 
   header {
@@ -19,10 +24,6 @@ const Styles = styled.div`
 
   .form-group {
     padding: 0.5rem 0;
-  }
-
-  .btn .btn-primary {
-    // background-color: red !important;
   }
 `;
 
@@ -110,13 +111,12 @@ function Contact(_props) {
   }, [formErrors, formValues]);
 
   return (
-    <Styles>
+    <Styles name='Contact' id='Contact'>
       <Container className='shadow-lg'>
-        <section className='col-md-10 mx-auto'>
+        <section>
           <header>
             <h3>Contact</h3>
           </header>
-          {/* <pre>{JSON.stringify(formValues, undefined, 2)}</pre> */}
           <Form>
             <div className='form-group'>
               <Form.Label htmlFor='username'>Name</Form.Label>

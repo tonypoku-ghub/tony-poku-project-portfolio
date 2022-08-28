@@ -6,9 +6,9 @@ const Styles = styled.div`
     flex-direction: column;
     justify-content: end;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-    z-index: -1;
+    position: relative;
+    // bottom: 0;
+    z-index: 0;
     //border: 1pt red solid;
     min-height: auto !important;
   }
@@ -21,7 +21,7 @@ const Styles = styled.div`
 
 function Footer(_props) {
   return (
-    <Styles>
+    <Styles name='Footer' id='Footer'>
       <Container>
         <Row>
           <Col>

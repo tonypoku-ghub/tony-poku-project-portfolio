@@ -26,7 +26,7 @@ const Styles = styled.div`
 
 function Jumbo() {
   return (
-    <Styles>
+    <Styles name='Jumbo' id='Jumbo'>
       <div className='jumbotron'>{/* <div className='overlay'></div> */}</div>
     </Styles>
   );

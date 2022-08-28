@@ -1,71 +1,57 @@
 import React from "react";
-import { Container, Card, Button, Row, Col } from "react-bootstrap";
+import { Card, Button, CardGroup, Container } from "react-bootstrap";
 import styled from "styled-components";
 import projects from "./project_data";
 
 const Styles = styled.div`
-  .container {
-    display: flex;
-    // justify-content: space-between;
-    width: 50vw;
-    border: 1pt red solid;
-    min-height: 35vh;
-    max-height: 35vh;
-    margin: 2rem auto;
-    border: 1pt red solid;
-  }
-
   p {
-    padding: 2rem 0;
+    padding: 0.5rem 0;
   }
 
-  header {
-    margin: 1rem -3rem;
-  }
-
-  section {
-    padding: 3rem;
+  .card {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    height: auto;
+    min-width: 30vw;
   }
 `;
 
-function AboutMe() {
+function Portfolio() {
   return (
-    <Styles>
-      <Container fluid>
-        <Row>
+    <Styles name='Portfolio' id='Portfolio'>
+      <Container>
+        <CardGroup>
           {projects.map((project, index) => (
-            <Col xs={4} key={index}>
-              <section>
-                <Card className='shadow-sm'>
-                  <Card.Img variant='top' src={project.imgSrc} />
-                  <Card.Body>
-                    <Card.Title>{project.title}</Card.Title>
-                    <Card.Text>{project.text}</Card.Text>
-                    <Button
-                      className='mx-1'
-                      href={project.website}
-                      variant='primary'
-                      target='_blank'
-                    >
-                      View website
-                    </Button>
-                    <Button
-                      className='mx-1'
-                      href={project.website}
-                      variant='primary'
-                      target='_blank'
-                    >
-                      View Gitub Repo
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </section>
-            </Col>
+            <Card className='shadow-sm' key={index}>
+              <Card.Img variant='top' src={project.imgSrc} />
+              <Card.Body>
+                <Card.Title>{project.title}</Card.Title>
+                <Card.Text>{project.text}</Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <Button
+                  className='mx-1'
+                  href={project.website}
+                  variant='outline-secondary'
+                  target='_blank'
+                >
+                  View website
+                </Button>
+                <Button
+                  className='mx-1'
+                  href={project.website}
+                  variant='outline-secondary'
+                  target='_blank'
+                >
+                  View Gitub Repo
+                </Button>
+              </Card.Footer>
+            </Card>
           ))}
-        </Row>
+        </CardGroup>
       </Container>
     </Styles>
   );
 }
 
-export default AboutMe;
+export default Portfolio;
