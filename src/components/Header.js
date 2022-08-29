@@ -1,4 +1,3 @@
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import styled from "styled-components";
@@ -38,8 +37,6 @@ const Styles = styled.div`
 
 export default function Header(props) {
   const handleMenuSelection = (e) => {
-    console.log("Header.js handleMenuSelection called", e.target.id);
-
     props.setActivePage(e.target.id);
   };
 

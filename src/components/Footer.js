@@ -39,7 +39,11 @@ function Footer(_props) {
             >
               <Badge bg='secondary'>Linked In</Badge>
             </a>{" "}
-            <a href='https://twitter.com/toniez' target='_blank'>
+            <a
+              href='https://twitter.com/toniez'
+              target='_blank'
+              rel='noreferrer'
+            >
               <Badge bg='secondary'>Twitter</Badge>
             </a>
           </Col>

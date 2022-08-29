@@ -41,11 +41,8 @@ function Contact(_props) {
   const handleBlurEvent = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
-    console.log("e.target ", e.target);
-    console.log("{ name, value } ", { name, value });
 
     setFormValues({ ...formValues, [name]: value });
-    console.log("formValues: ", formValues);
 
     if (isValidForm(name, value)) {
     }
@@ -54,59 +51,35 @@ function Contact(_props) {
   const isValidForm = (name, value) => {
     let error;
 
-    console.log("name", name);
-    console.log("value", value);
-    console.log("missingData? ", !value);
-
     if (!value) {
       error = `${name} is required`;
-      console.log("error - ", error);
       setFormErrors({ ...formErrors, [name]: error });
     } else {
       delete formErrors[name];
     }
-
-    console.log(
-      "isEmail = " +
-        /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(value)
-    );
 
     if (
       name === "email" &&
       !formErrors?.email &&
-      !/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(value)
+      !/^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/.test(value)
     ) {
       error = `Invalid ${name} format`;
-      console.log("error - ", error);
       setFormErrors({ ...formErrors, [name]: error });
     } else {
       delete formErrors[name];
     }
-
-    console.log("formErrors", formErrors);
 
     return Object.keys(formErrors).length === 0;
   };
 
   useEffect(() => {
-    console.log("useEffect called");
     if (
       Object.keys(formErrors).length === 0 &&
       !Object.values(formValues).some((item) => !item)
     ) {
       setButtonDisabled(false);
-      console.log(
-        "form button enabled",
-        " formErrors.length === " + Object.keys(formErrors).length,
-        " Object.values(formValues) === " + Object.values(formValues)
-      );
     } else {
       setButtonDisabled(true);
-      console.log(
-        "form button disabled",
-        " formErrors.length === " + Object.keys(formErrors).length,
-        " Object.values(formValues) === " + Object.values(formValues)
-      );
     }
   }, [formErrors, formValues]);
 
