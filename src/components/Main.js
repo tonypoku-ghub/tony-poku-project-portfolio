@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const Styles = styled.div`
   .container {
-    min-height: 80vh;
+    min-height: 84vh;
     // border: 1pt red solid;
   }
 `;

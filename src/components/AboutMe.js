@@ -7,10 +7,10 @@ const Styles = styled.div`
   .container {
     display: flex;
     max-width: 80vw;
-    width: 60vw;
+    width: 50vw;
     // border: 1pt red solid;
     min-height: 50vh !important;
-    max-height: 60vh;
+    max-height: 70vh;
     margin: 2rem auto;
   }
 
@@ -36,6 +36,10 @@ const Styles = styled.div`
   }
 
   p {
+    font-size: 1vw;
+  }
+
+  h3 {
     font-size: 1.5vw;
   }
 `;

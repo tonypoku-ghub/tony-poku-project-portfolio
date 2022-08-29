@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Styles = styled.div`
   .navbar {
     max-width: 100vw;
-    max-height: 100vh;
+    max-height: 4vh;
     padding-left: 0.5rem;
   }
 

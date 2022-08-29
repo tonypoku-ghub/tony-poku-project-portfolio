@@ -8,7 +8,7 @@ const Styles = styled.div`
     max-width: 80vw;
     width: 50vw;
     // border: 1pt red solid;
-    min-height: auto;
+    min-height: 50vh !important;
     max-height: 70vh;
     margin: 2rem auto;
   }
