@@ -9,7 +9,6 @@ export default function WebPage() {
   const [mainId, setMainId] = useState("aboutme");
 
   const setActivePage = (id) => {
-    console.log("WebPage.js setActivePage called ...", id);
     setMainId(id);
   };
 

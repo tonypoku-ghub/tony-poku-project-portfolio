@@ -1,4 +1,4 @@
-import { Container, ListGroup } from "react-bootstrap";
+import { Alert, Container, ListGroup } from "react-bootstrap";
 import styled from "styled-components";
 
 const Styles = styled.div`
@@ -19,19 +19,23 @@ const Styles = styled.div`
   h3 {
     padding 3rem 0 1rem;
   }
+
+  .list-group {
+    background-color: #cff4fc !important;
+  }
 `;
 function Resume() {
   return (
     <Styles name='Resume' id='Resume'>
       <Container>
-        <span>
+        <Alert variant='info'>
           Download my{" "}
           <a href='CV-AP.pdf' target='_blank'>
             resume
           </a>
-        </span>
+        </Alert>
         <h3>Front-end Proficiencies</h3>
-        <ListGroup>
+        <ListGroup variant='flush' bsPrefix='group1'>
           <ListGroup.Item>HTML</ListGroup.Item>
           <ListGroup.Item>CSS</ListGroup.Item>
           <ListGroup.Item>JavaScript</ListGroup.Item>
@@ -41,7 +45,7 @@ function Resume() {
           <ListGroup.Item>JWT</ListGroup.Item>
         </ListGroup>
         <h3>Back-end Proficiencies</h3>
-        <ListGroup>
+        <ListGroup variant='flush' bsPrefix='group2'>
           <ListGroup.Item>MongoDB</ListGroup.Item>
           <ListGroup.Item>Express</ListGroup.Item>
           <ListGroup.Item>MySQL/Sequelizer</ListGroup.Item>

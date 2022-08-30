@@ -4,22 +4,28 @@ import styled from "styled-components";
 import projects from "./project_data";
 
 const Styles = styled.div`
+  .container {
+    margin-top: 5rem;
+    width: 60vw;
+  }
+
   p {
     padding: 0.5rem 0;
   }
 
   .card {
-    margin: 0.5rem;
+    margin: 2rem;
     height: auto;
-    min-width: 25vw;
+    width: 15vw;
+    min-width: 15vw;
     max-width: 30vw;
     background-color: #a3e9e5;
   }
 
   .card-group {
     justify-content: space-between !important;
-    margin: 2rem;
-    padding-bottom: 3rem;
+    margin: 0.5rem;
+    // padding-bottom: 3rem;
   }
 `;
 
