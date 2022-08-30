@@ -4,7 +4,9 @@
 
 ## Description
 
-My developer portfolio built using React to create a one-page responsive application to share various projects worked on during the Northwestern Full Stack development boot camp. 
+My developer portfolio built using React to create a one-page responsive application to share various projects worked on during the Northwestern Full Stack development boot camp.
+
+https://tonypoku-ghub.github.io/tony-poku-project-portfolio/
 
 ## Table of contents
 
@@ -22,7 +24,7 @@ To install from Github, simple fork the project into your local drive. Install N
 
 ## Usage
 
-To use this application, run npm init to prep your environment. Run npm install to install the node modules. Start the appliation by running npm run start or create a new script in your package.json file. 
+To use this application, run npm init to prep your environment. Run npm install to install the node modules. Start the appliation by running npm run start or create a new script in your package.json file.
 
 ## License
 
