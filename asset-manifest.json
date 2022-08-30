@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/tony-poku-project-portfolio/static/css/main.84487ea8.css",
+    "main.js": "/tony-poku-project-portfolio/static/js/main.56d19f43.js",
+    "static/js/787.56b8d279.chunk.js": "/tony-poku-project-portfolio/static/js/787.56b8d279.chunk.js",
+    "static/media/QuizImage_500x500.png": "/tony-poku-project-portfolio/static/media/QuizImage_500x500.42718f2fdd576c446a18.png",
+    "static/media/weatherImage_500x500.png": "/tony-poku-project-portfolio/static/media/weatherImage_500x500.7f7433240f5dc0ccce3f.png",
+    "static/media/WorkDayImage_500x500.png": "/tony-poku-project-portfolio/static/media/WorkDayImage_500x500.3e1a2edf8dbc3f4d3d02.png",
+    "static/media/notes_made_easy_500x500.png": "/tony-poku-project-portfolio/static/media/notes_made_easy_500x500.b6f796bcdc791e7b3845.png",
+    "static/media/banner.jpg": "/tony-poku-project-portfolio/static/media/banner.f7a9e4a32ee339f94b02.jpg",
+    "static/media/jate_500x500.png": "/tony-poku-project-portfolio/static/media/jate_500x500.06a63c6745a5aa1f63f6.png",
+    "static/media/Community_Care.png": "/tony-poku-project-portfolio/static/media/Community_Care.b7c65ef0efe0ade906fc.png",
+    "static/media/about_me_avatar.jpg": "/tony-poku-project-portfolio/static/media/about_me_avatar.eaacdb85bc49f27d6fa4.jpg",
+    "index.html": "/tony-poku-project-portfolio/index.html",
+    "main.84487ea8.css.map": "/tony-poku-project-portfolio/static/css/main.84487ea8.css.map",
+    "main.56d19f43.js.map": "/tony-poku-project-portfolio/static/js/main.56d19f43.js.map",
+    "787.56b8d279.chunk.js.map": "/tony-poku-project-portfolio/static/js/787.56b8d279.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84487ea8.css",
+    "static/js/main.56d19f43.js"
+  ]
+}
